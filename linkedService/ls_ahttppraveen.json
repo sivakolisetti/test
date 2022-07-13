@@ -1,0 +1,19 @@
+{
+	"name": "ls_ahttppraveen",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"description": "here in this linked service we get data directly from the url",
+		"parameters": {
+			"sourceURL": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "HttpServer",
+		"typeProperties": {
+			"url": "@{linkedService().sourceURL}",
+			"enableServerCertificateValidation": true,
+			"authenticationType": "Anonymous"
+		}
+	}
+}

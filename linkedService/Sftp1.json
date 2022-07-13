@@ -1,0 +1,24 @@
+{
+	"name": "Sftp1",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"parameters": {
+			"sftpusername": {
+				"type": "String"
+			},
+			"mainusername": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"type": "Sftp",
+		"typeProperties": {
+			"host": "@{linkedService().sftpusername}",
+			"port": 22,
+			"skipHostKeyValidation": true,
+			"authenticationType": "Basic",
+			"userName": "@{linkedService().mainusername}",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDVFRkNGNjk4LTc0QzMtNDFDQS05RkQzLUU4NjYzRTJBNERGM180MzA5Nzg4YS1iMWI5LTQ0MDQtOGFkMi1hZGZmNTUwYWQ0ZDkiDQp9"
+		}
+	}
+}
