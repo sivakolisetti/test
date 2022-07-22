@@ -1,0 +1,39 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "praveenadfproject"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"value": ""
+		},
+		"Sftp1_password": {
+			"value": ""
+		},
+		"ls_ablobstgrpraveen123_connectionString": {
+			"value": ""
+		},
+		"ls_adls_datalaakestgpraveen_accountKey": {
+			"value": ""
+		},
+		"Sftp1_properties_typeProperties_host": {
+			"value": "@{linkedService().sftpusername}"
+		},
+		"Sftp1_properties_typeProperties_userName": {
+			"value": "@{linkedService().mainusername}"
+		},
+		"lalitha_properties_typeProperties_url": {
+			"value": "https://www1.nseindia.com/"
+		},
+		"ls_adls_datalaakestgpraveen_properties_typeProperties_url": {
+			"value": "https://datalakestgpraveen.dfs.core.windows.net/"
+		},
+		"ls_ahttppraveen_properties_typeProperties_url": {
+			"value": "@{linkedService().sourceURL}"
+		},
+		"tr_ingest_properties_typeProperties_scope": {
+			"value": "/subscriptions/c0d5e282-0144-4395-b8cf-07a87eaee2b8/resourceGroups/covid-reporting-rg/providers/Microsoft.Storage/storageAccounts/stgrpraveeen123"
+		}
+	}
+}
