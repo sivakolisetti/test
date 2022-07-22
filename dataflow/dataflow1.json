@@ -10,6 +10,9 @@
 						"type": "DatasetReference"
 					},
 					"name": "source1"
+				},
+				{
+					"name": "source2"
 				}
 			],
 			"sinks": [],
@@ -39,6 +42,8 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> source1",
+				"source(allowSchemaDrift: true,",
+				"     validateSchema: false) ~> source2",
 				"source1 filter(continent =='Europe' && not(isNull(country_code))) ~> filteredonlyeuropedata",
 				"filteredonlyeuropedata select(mapColumn(",
 				"          country,",
