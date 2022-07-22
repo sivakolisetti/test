@@ -15,36 +15,45 @@
 				"fileSystem": "raw"
 			},
 			"columnDelimiter": ",",
-			"escapeChar": "\\",
+			"escapeChar": "",
 			"firstRowAsHeader": true,
-			"quoteChar": "\""
+			"quoteChar": ""
 		},
 		"schema": [
 			{
+				"name": "country",
 				"type": "String"
 			},
 			{
+				"name": "country_code",
 				"type": "String"
 			},
 			{
+				"name": "continent",
 				"type": "String"
 			},
 			{
+				"name": "population",
 				"type": "String"
 			},
 			{
+				"name": "indicator",
 				"type": "String"
 			},
 			{
+				"name": "daily_count",
 				"type": "String"
 			},
 			{
+				"name": "date",
 				"type": "String"
 			},
 			{
+				"name": "rate_14_day",
 				"type": "String"
 			},
 			{
+				"name": "source",
 				"type": "String"
 			}
 		]
