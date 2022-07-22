@@ -16,6 +16,12 @@
 			"transformations": [
 				{
 					"name": "filteredonlyeuropedata"
+				},
+				{
+					"name": "select1"
+				},
+				{
+					"name": "pivot1"
 				}
 			],
 			"scriptLines": [
@@ -23,17 +29,39 @@
 				"          country as string,",
 				"          country_code as string,",
 				"          continent as string,",
-				"          population as string,",
+				"          population as integer,",
 				"          indicator as string,",
-				"          daily_count as string,",
-				"          date as string,",
+				"          daily_count as integer,",
+				"          date as date,",
 				"          rate_14_day as string,",
 				"          source as string",
 				"     ),",
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> source1",
-				"source1 filter(continent =='europe' && not(isNull(country_code))) ~> filteredonlyeuropedata"
+				"source1 filter(continent =='Europe' && not(isNull(country_code))) ~> filteredonlyeuropedata",
+				"filteredonlyeuropedata select(mapColumn(",
+				"          country,",
+				"          country_code,",
+				"          continent,",
+				"          population,",
+				"          indicator,",
+				"          daily_count,",
+				"          date,",
+				"          rate_14_day,",
+				"          source",
+				"     ),",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> select1",
+				"select1 pivot(groupBy(country,",
+				"          country_code,",
+				"          population,",
+				"          source,",
+				"          date),",
+				"     pivotBy(indicator, ['confirmed cases', 'deaths']),",
+				"     count = sum(daily_count),",
+				"     columnNaming: '$N$V',",
+				"     lateral: true) ~> pivot1"
 			]
 		}
 	}
