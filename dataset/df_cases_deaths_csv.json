@@ -2,7 +2,7 @@
 	"name": "df_cases_deaths_csv",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "ls_adls_datalaakestgpraveen",
+			"referenceName": "AzureDataLakeStoragevamsi1",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
