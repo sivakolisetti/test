@@ -34,7 +34,7 @@ on:
           echo Add other actions to build,
           echo test, and deploy your project.
   workflow_run:
-    workflows: [build]
+    workflows: ["build"]
     types: [completed]
 jobs:  
   on-success:
